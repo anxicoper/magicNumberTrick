@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magic Number Trick</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        .container { margin-top: 50px; }
+        .result { font-size: 24px; font-weight: bold; margin-top: 20px; }
+        button { margin-top: 20px; padding: 10px; font-size: 16px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Magic Number Trick</h1>
+        <script>
+            // Author: Angelica Corzo
+            // Date: Feb 2 2025
+            // Algorithm:
+            // 1. Prompt the user to enter a number.
+            // 2. Add 9 to the number.
+            // 3. Multiply the result by 2.
+            // 4. Subtract 4.
+            // 5. Divide by 2.
+            // 6. Subtract the original number.
+            // 7. Display the result (which will always be 7).
+            
+            // Get user input
+            let userInput = prompt("Choose any whole number:");
+            let userNumber = parseInt(userInput);
+            
+            // Validate user input
+            if (isNaN(userNumber)) {
+                alert("Please enter a valid whole number.");
+                location.reload();
+            } else {
+                // Perform calculations
+                let step1 = userNumber + 9;
+                let step2 = step1 * 2;
+                let step3 = step2 - 4;
+                let step4 = step3 / 2;
+                let finalNumber = step4 - userNumber;
+                
+                // Display results
+                document.write("<h2>Steps of the Trick:</h2>");
+                document.write("<ul>");
+                document.write("<li>Your chosen number: " + userNumber + "</li>");
+                document.write("<li>Add 9: " + step1 + "</li>");
+                document.write("<li>Multiply by 2: " + step2 + "</li>");
+                document.write("<li>Subtract 4: " + step3 + "</li>");
+                document.write("<li>Divide by 2: " + step4 + "</li>");
+                document.write("<li>Subtract your original number: " + finalNumber + "</li>");
+                document.write("</ul>");
+                document.write("<p class='result'>Your final number is: <span style='color: red;'>Lucky " + finalNumber + "!</span></p>");
+                
+                // Show result in alert
+                alert("Your final number is " + finalNumber);
+            }
+        </script>
+        <button onclick="location.reload()">Try Again</button>
+    </div>
+</body>
+</html>
+
